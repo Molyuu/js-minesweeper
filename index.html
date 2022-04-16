@@ -67,7 +67,11 @@
         var grid = init_grid();
         var count = document.getElementById("count");
         var time = document.getElementById("time");
-
+        var second = 0;
+        setInterval(function() {
+            document.write(second, "s");
+            second++;
+        }, 1000);
         //初始化矩阵
         function init_grid() {
             let gridHtml = "";
