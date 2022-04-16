@@ -51,8 +51,13 @@
     <script>
         var row = prompt("请输入行数", 10);
         row = parseInt(row);
-        var col = prompt("请输入列数", 10);
+		var col = prompt("请输入列数", 10);
         col = parseInt(col);
+		if (row*col > 100000){
+					alert("你是不是高嘉麒？")
+					row=10;
+					col=10;
+				}
         var maxCount = (row * col) / 10;
         var isFirstOpen = true;
         var grid = init_grid();
