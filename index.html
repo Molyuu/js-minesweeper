@@ -169,26 +169,26 @@
                     }
 
                     if (block.isMine) {
-                        //踩雷
-                        block.innerHTML = "雷"; //显示为 '雷'
-                        //遍历矩阵打开所有的地雷方格
+                        //寄
+                        block.innerHTML = "雷"; //显示雷
+                        //暴力的美！
                         for (let i = 0; i < row; i++) {
                             for (let j = 0; j < col; j++) {
                                 //找到地雷
                                 block = grid[i][j];
                                 if (!block.isOpen && block.isMine) {
-                                    op(block); //设置打开状态和样式
-                                    block.innerHTML = "雷"; //显示为 '雷'
+                                    op(block); //打开状态和样式
+                                    block.innerHTML = "雷"; //同上
                                 }
                             }
                         }
-                        //提示游戏结束
+                        
                         alert(
                             "你游玩：" + status + "，" + second + "秒就白给了！逊爆了！"
                         );
                     } else if (block.count === 0) {
                         //打开计雷数为0的方格
-                        //遍历九宫格内的方格
+                        //暴力
                         for (let i = _i - 1; i < _i + 2; i++) {
                             for (let j = _j - 1; j < _j + 2; j++) {
                                 //判断是否越界&&跳过已打开的方格&&非雷
